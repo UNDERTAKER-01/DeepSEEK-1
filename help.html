@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Справка - Нефтяной Мониторинг</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!-- Шапка сайта -->
+        <header class="header">
+            <div class="logo">
+                <div class="logo-image">
+                    <i class="fas fa-oil-can"></i>
+                </div>
+                <div class="logo-text">
+                    <h1>Нефтяной Мониторинг</h1>
+                    <p>Система слежения за объектами нефтедобычи</p>
+                </div>
+            </div>
+            <div class="nav-container">
+                <nav class="main-nav">
+                    <a href="index.html" class="nav-link"><i class="fas fa-home"></i> Главная</a>
+                    <a href="help.html" class="nav-link active"><i class="fas fa-question-circle"></i> Справка</a>
+                    <a href="settings.html" class="nav-link"><i class="fas fa-cog"></i> Настройки</a>
+                    <a href="contacts.html" class="nav-link"><i class="fas fa-phone-alt"></i> Контакты</a>
+                </nav>
+                <div class="date-display">
+                    <div id="current-date"></div>
+                    <div id="current-time"></div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Основное содержимое страницы справки -->
+        <div class="help-container">
+            <div class="page-header">
+                <h2><i class="fas fa-question-circle"></i> Справка по системе мониторинга</h2>
+                <button class="back-button" onclick="window.location.href='index.html'">
+                    <i class="fas fa-arrow-left"></i> Назад
+                </button>
+            </div>
+            
+            <div class="help-content">
+                <div class="help-section">
+                    <h3><i class="fas fa-info-circle"></i> Общая информация</h3>
+                    <p>Система мониторинга нефтетанкеров и нефтевышек предоставляет реальные данные о перемещении и состоянии объектов нефтедобычи по всему миру.</p>
+                </div>
+                
+                <div class="help-section">
+                    <h3><i class="fas fa-globe"></i> Работа с картой</h3>
+                    <div class="help-grid">
+                        <div class="help-item">
+                            <div class="help-icon"><i class="fas fa-ship"></i></div>
+                            <div class="help-text">
+                                <h4>Нефтетанкеры</h4>
+                                <p>Отображаются синими значками. Наведите курсор для просмотра информации о танкере.</p>
+                            </div>
+                        </div>
+                        <div class="help-item">
+                            <div class="help-icon"><i class="fas fa-oil-rig"></i></div>
+                            <div class="help-text">
+                                <h4>Нефтевышки</h4>
+                                <p>Отображаются желтыми значками. Нажмите для получения детальной информации.</p>
+                            </div>
+                        </div>
+                        <div class="help-item">
+                            <div class="help-icon"><i class="fas fa-filter"></i></div>
+                            <div class="help-text">
+                                <h4>Фильтрация</h4>
+                                <p>Используйте панель фильтров для отображения только нужных типов объектов.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="help-section">
+                    <h3><i class="fas fa-tachometer-alt"></i> Статусы объектов</h3>
+                    <div class="status-examples">
+                        <div class="status-example">
+                            <div class="status-indicator example normal">
+                                <div class="status-dot"></div>
+                                <span>НОРМАЛЬНЫЙ</span>
+                            </div>
+                            <p>Объект работает в штатном режиме</p>
+                        </div>
+                        <div class="status-example">
+                            <div class="status-indicator example warning">
+                                <div class="status-dot warning"></div>
+                                <span>ПРЕДУПРЕЖДЕНИЕ</span>
+                            </div>
+                            <p>Обнаружены незначительные отклонения</p>
+                        </div>
+                        <div class="status-example">
+                            <div class="status-indicator example alert">
+                                <div class="status-dot alert"></div>
+                                <span>ТРЕВОГА</span>
+                            </div>
+                            <p>Требуется вмешательство персонала</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="help-section">
+                    <h3><i class="fas fa-newspaper"></i> Новостная панель</h3>
+                    <p>В правой части экрана расположена панель новостей нефтяного бизнеса:</p>
+                    <ul class="help-list">
+                        <li><i class="fas fa-chevron-up"></i> Кнопка "Вверх" - предыдущая новость</li>
+                        <li><i class="fas fa-chevron-down"></i> Кнопка "Вниз" - следующая новость</li>
+                        <li><i class="fas fa-volume-up"></i> Кнопка "Динамик" - включение/выключение озвучки</li>
+                        <li><i class="fas fa-expand-alt"></i> Кнопка "Свернуть" - скрыть/показать новости</li>
+                    </ul>
+                </div>
+                
+                <div class="help-section">
+                    <h3><i class="fas fa-chart-line"></i> Статистическая панель</h3>
+                    <p>Отображает ключевые показатели системы в реальном времени:</p>
+                    <ul class="help-list">
+                        <li>Количество активных объектов</li>
+                        <li>Объем суточной добычи</li>
+                        <li>Количество объектов в пути</li>
+                        <li>Текущие тревоги</li>
+                    </ul>
+                </div>
+                
+                <div class="help-section">
+                    <h3><i class="fas fa-keyboard"></i> Горячие клавиши</h3>
+                    <div class="shortcuts-grid">
+                        <div class="shortcut-item">
+                            <kbd>F1</kbd>
+                            <span>Открыть справку</span>
+                        </div>
+                        <div class="shortcut-item">
+                            <kbd>F2</kbd>
+                            <span>Обновить данные</span>
+                        </div>
+                        <div class="shortcut-item">
+                            <kbd>Ctrl + N</kbd>
+                            <span>Следующая новость</span>
+                        </div>
+                        <div class="shortcut-item">
+                            <kbd>Ctrl + P</kbd>
+                            <span>Предыдущая новость</span>
+                        </div>
+                        <div class="shortcut-item">
+                            <kbd>Ctrl + M</kbd>
+                            <span>Открыть карту</span>
+                        </div>
+                        <div class="shortcut-item">
+                            <kbd>Esc</kbd>
+                            <span>Закрыть окно</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="help-footer">
+                <p><strong>Техническая поддержка:</strong> Для получения дополнительной помощи обратитесь в службу поддержки по телефону, указанному на странице "Контакты".</p>
+                <button class="back-button full-width" onclick="window.location.href='index.html'">
+                    <i class="fas fa-arrow-left"></i> Вернуться на главную
+                </button>
+            </div>
+        </div>
+
+        <!-- Футер -->
+        <footer class="footer">
+            <div class="footer-info">
+                <p>Нефтяной Мониторинг &copy; 1995-2023 | Версия системы: 3.2.1</p>
+                <p>Документация: Редакция 5.1</p>
+            </div>
+            <div class="back-to-top">
+                <button id="back-to-top-btn-help"><i class="fas fa-arrow-up"></i> Наверх</button>
+            </div>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
