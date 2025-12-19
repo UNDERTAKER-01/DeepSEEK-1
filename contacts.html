@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Контакты - Нефтяной Мониторинг</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!-- Шапка сайта -->
+        <header class="header">
+            <div class="logo">
+                <div class="logo-image">
+                    <i class="fas fa-oil-can"></i>
+                </div>
+                <div class="logo-text">
+                    <h1>Нефтяной Мониторинг</h1>
+                    <p>Система слежения за объектами нефтедобычи</p>
+                </div>
+            </div>
+            <div class="nav-container">
+                <nav class="main-nav">
+                    <a href="index.html" class="nav-link"><i class="fas fa-home"></i> Главная</a>
+                    <a href="help.html" class="nav-link"><i class="fas fa-question-circle"></i> Справка</a>
+                    <a href="settings.html" class="nav-link"><i class="fas fa-cog"></i> Настройки</a>
+                    <a href="contacts.html" class="nav-link active"><i class="fas fa-phone-alt"></i> Контакты</a>
+                </nav>
+                <div class="date-display">
+                    <div id="current-date"></div>
+                    <div id="current-time"></div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Основное содержимое страницы контактов -->
+        <div class="contacts-container">
+            <div class="page-header">
+                <h2><i class="fas fa-phone-alt"></i> Контакты и обратная связь</h2>
+                <button class="back-button" onclick="window.location.href='index.html'">
+                    <i class="fas fa-arrow-left"></i> Назад
+                </button>
+            </div>
+            
+            <div class="contacts-content">
+                <div class="contacts-grid">
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-headset"></i>
+                        </div>
+                        <h3>Техническая поддержка</h3>
+                        <div class="contact-info">
+                            <p><i class="fas fa-phone"></i> Телефон: +7 (800) 555-35-35</p>
+                            <p><i class="fas fa-clock"></i> График: 24/7</p>
+                            <p><i class="fas fa-envelope"></i> Email: support@oilmonitor.ru</p>
+                        </div>
+                        <p class="contact-description">Круглосуточная поддержка пользователей системы</p>
+                    </div>
+                    
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-user-tie"></i>
+                        </div>
+                        <h3>Коммерческий отдел</h3>
+                        <div class="contact-info">
+                            <p><i class="fas fa-phone"></i> Телефон: +7 (495) 123-45-67</p>
+                            <p><i class="fas fa-clock"></i> График: Пн-Пт 9:00-18:00</p>
+                            <p><i class="fas fa-envelope"></i> Email: sales@oilmonitor.ru</p>
+                        </div>
+                        <p class="contact-description">Вопросы по приобретению и лицензированию</p>
+                    </div>
+                    
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <h3>Адрес офиса</h3>
+                        <div class="contact-info">
+                            <p><i class="fas fa-building"></i> Адрес: г. Москва, ул. Нефтяников, д. 15</p>
+                            <p><i class="fas fa-subway"></i> Метро: Нефтяная</p>
+                            <p><i class="fas fa-fax"></i> Факс: +7 (495) 987-65-43</p>
+                        </div>
+                        <p class="contact-description">Центральный офис компании</p>
+                    </div>
+                    
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-exclamation-triangle"></i>
+                        </div>
+                        <h3>Экстренная связь</h3>
+                        <div class="contact-info">
+                            <p><i class="fas fa-phone"></i> Телефон: +7 (495) 911-11-11</p>
+                            <p><i class="fas fa-envelope"></i> Email: emergency@oilmonitor.ru</p>
+                            <p><i class="fas fa-satellite-dish"></i> Рация: Канал 5, частота 145.500</p>
+                        </div>
+                        <p class="contact-description">Для экстренных ситуаций на объектах</p>
+                    </div>
+                </div>
+                
+                <div class="contact-form-section">
+                    <h3><i class="fas fa-envelope"></i> Форма обратной связи</h3>
+                    <div class="contact-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="name"><i class="fas fa-user"></i> Ваше имя</label>
+                                <input type="text" id="name" placeholder="Введите ваше имя">
+                            </div>
+                            <div class="form-group">
+                                <label for="email"><i class="fas fa-at"></i> Email</label>
+                                <input type="email" id="email" placeholder="example@domain.com">
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="subject"><i class="fas fa-tag"></i> Тема сообщения</label>
+                            <select id="subject">
+                                <option value="">Выберите тему</option>
+                                <option value="support">Техническая поддержка</option>
+                                <option value="sales">Коммерческий вопрос</option>
+                                <option value="emergency">Экстренная ситуация</option>
+                                <option value="other">Другое</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message"><i class="fas fa-comment-alt"></i> Сообщение</label>
+                            <textarea id="message" rows="5" placeholder="Опишите вашу проблему или вопрос..."></textarea>
+                        </div>
+                        
+                        <div class="form-actions">
+                            <button type="submit" class="submit-btn">
+                                <i class="fas fa-paper-plane"></i> Отправить сообщение
+                            </button>
+                            <button type="reset" class="reset-btn">
+                                <i class="fas fa-redo"></i> Очистить форму
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="regional-offices">
+                    <h3><i class="fas fa-map-marked-alt"></i> Региональные офисы</h3>
+                    <div class="offices-grid">
+                        <div class="office-item">
+                            <h4>Санкт-Петербург</h4>
+                            <p>Невский пр-т, д. 100</p>
+                            <p>+7 (812) 333-44-55</p>
+                        </div>
+                        <div class="office-item">
+                            <h4>Екатеринбург</h4>
+                            <p>ул. Мамина-Сибиряка, д. 25</p>
+                            <p>+7 (343) 222-33-44</p>
+                        </div>
+                        <div class="office-item">
+                            <h4>Новосибирск</h4>
+                            <p>Красный пр-т, д. 50</p>
+                            <p>+7 (383) 111-22-33</p>
+                        </div>
+                        <div class="office-item">
+                            <h4>Краснодар</h4>
+                            <p>ул. Красная, д. 150</p>
+                            <p>+7 (861) 444-55-66</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="contacts-footer">
+                <div class="emergency-notice">
+                    <i class="fas fa-exclamation-triangle"></i>
+                    <p><strong>Важно!</strong> Для экстренных ситуаций на нефтяных объектах используйте специальный телефон экстренной связи.</p>
+                </div>
+                <button class="back-button full-width" onclick="window.location.href='index.html'">
+                    <i class="fas fa-arrow-left"></i> Вернуться на главную
+                </button>
+            </div>
+        </div>
+
+        <!-- Футер -->
+        <footer class="footer">
+            <div class="footer-info">
+                <p>Нефтяной Мониторинг &copy; 1995-2023 | Версия системы: 3.2.1</p>
+                <p>Техподдержка: круглосуточно</p>
+            </div>
+            <div class="back-to-top">
+                <button id="back-to-top-btn-contacts"><i class="fas fa-arrow-up"></i> Наверх</button>
+            </div>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
