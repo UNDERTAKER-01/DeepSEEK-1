@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Нефтяной Мониторинг 90-х</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!-- Шапка сайта -->
+        <header class="header">
+            <div class="logo">
+                <div class="logo-image">
+                    <i class="fas fa-oil-can"></i>
+                </div>
+                <div class="logo-text">
+                    <h1>Нефтяной Мониторинг</h1>
+                    <p>Система слежения за объектами нефтедобычи</p>
+                </div>
+            </div>
+            <div class="date-display">
+                <div id="current-date"></div>
+                <div id="current-time"></div>
+            </div>
+        </header>
+
+        <!-- Панель управления -->
+        <div class="control-panel">
+            <h2><i class="fas fa-globe-americas"></i> Выбор континента</h2>
+            <div class="continent-buttons">
+                <button class="continent-btn active" data-continent="all">Все континенты</button>
+                <button class="continent-btn" data-continent="europe">Европа</button>
+                <button class="continent-btn" data-continent="asia">Азия</button>
+                <button class="continent-btn" data-continent="africa">Африка</button>
+                <button class="continent-btn" data-continent="america">Америка</button>
+                <button class="continent-btn" data-continent="australia">Австралия</button>
+            </div>
+            
+            <div class="object-filter">
+                <h3><i class="fas fa-filter"></i> Фильтр объектов</h3>
+                <div class="filter-options">
+                    <label class="checkbox-label">
+                        <input type="checkbox" checked id="tankers-filter">
+                        <span class="checkmark"></span>
+                        Нефтетанкеры
+                    </label>
+                    <label class="checkbox-label">
+                        <input type="checkbox" checked id="rigs-filter">
+                        <span class="checkmark"></span>
+                        Нефтевышки
+                    </label>
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="alerts-filter">
+                        <span class="checkmark"></span>
+                        Только тревоги
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <!-- Основное содержимое -->
+        <div class="main-content">
+            <!-- Панель новостей -->
+            <div class="news-panel">
+                <div class="news-header">
+                    <h2><i class="fas fa-newspaper"></i> Новости нефтяного бизнеса</h2>
+                    <div class="news-controls">
+                        <button id="prev-news" title="Предыдущая новость"><i class="fas fa-chevron-up"></i></button>
+                        <button id="next-news" title="Следующая новость"><i class="fas fa-chevron-down"></i></button>
+                        <button id="toggle-news" title="Свернуть/развернуть"><i class="fas fa-compress-alt"></i></button>
+                        <button id="speech-toggle" title="Включить/выключить озвучку"><i class="fas fa-volume-up"></i></button>
+                    </div>
+                </div>
+                
+                <div class="news-container">
+                    <div class="news-item active">
+                        <div class="news-title">Цены на нефть Brent выросли до $85 за баррель</div>
+                        <div class="news-content">На мировых рынках наблюдается рост цен на нефть марки Brent до $85 за баррель на фоне сокращения запасов в США и геополитической напряженности на Ближнем Востоке.</div>
+                        <div class="news-date">15.11.2023</div>
+                    </div>
+                    <div class="news-item">
+                        <div class="news-title">Новый танкер-гигант спущен на воду</div>
+                        <div class="news-content">Китайская верфь завершила строительство нефтяного танкера грузоподъемностью 320 000 тонн. Судно способно перевозить 2.2 миллиона баррелей нефти.</div>
+                        <div class="news-date">14.11.2023</div>
+                    </div>
+                    <div class="news-item">
+                        <div class="news-title">Открыто новое месторождение в Северном море</div>
+                        <div class="news-content">Нефтяная компания Equinor объявила об открытии нового месторождения в Северном море с запасами около 50 миллионов баррелей нефтяного эквивалента.</div>
+                        <div class="news-date">13.11.2023</div>
+                    </div>
+                    <div class="news-item">
+                        <div class="news-title">Переговоры ОПЕК+ о сокращении добычи</div>
+                        <div class="news-content">Страны ОПЕК+ обсуждают возможность дальнейшего сокращения добычи нефти для поддержания цен на рынке в условиях глобального экономического спада.</div>
+                        <div class="news-date">12.11.2023</div>
+                    </div>
+                    <div class="news-item">
+                        <div class="news-title">Технологии повышения нефтеотдачи пластов</div>
+                        <div class="news-content">Ученые разработали новую технологию химического воздействия на пласты, которая позволяет увеличить нефтеотдачу на 15-20%.</div>
+                        <div class="news-date">11.11.2023</div>
+                    </div>
+                </div>
+                
+                <div class="news-counter">
+                    <span id="current-news">1</span> из <span id="total-news">5</span>
+                </div>
+            </div>
+
+            <!-- Панель мониторинга -->
+            <div class="monitoring-panel">
+                <div class="panel-header">
+                    <h2><i class="fas fa-tachometer-alt"></i> Система мониторинга</h2>
+                    <div class="status-indicator">
+                        <div class="status-dot active"></div>
+                        <span>СИСТЕМА АКТИВНА</span>
+                    </div>
+                </div>
+                
+                <div class="monitoring-container">
+                    <div class="map-container">
+                        <div class="world-map">
+                            <!-- Континенты -->
+                            <div class="continent europe" data-continent="europe"></div>
+                            <div class="continent asia" data-continent="asia"></div>
+                            <div class="continent africa" data-continent="africa"></div>
+                            <div class="continent america" data-continent="america"></div>
+                            <div class="continent australia" data-continent="australia"></div>
+                            
+                            <!-- Объекты мониторинга -->
+                            <div class="monitoring-object tanker" style="top: 30%; left: 45%;" data-continent="europe" data-status="normal">
+                                <div class="object-icon"><i class="fas fa-ship"></i></div>
+                                <div class="object-tooltip">Танкер "Восток"<br>Направление: Роттердам<br>Груз: 120,000 тонн<br>Статус: В пути</div>
+                            </div>
+                            <div class="monitoring-object tanker" style="top: 40%; left: 60%;" data-continent="asia" data-status="warning">
+                                <div class="object-icon"><i class="fas fa-ship"></i></div>
+                                <div class="object-tooltip">Танкер "Азия-1"<br>Направление: Шанхай<br>Груз: 80,000 тонн<br>Статус: Задержка</div>
+                            </div>
+                            <div class="monitoring-object rig" style="top: 50%; left: 50%;" data-continent="africa" data-status="normal">
+                                <div class="object-icon"><i class="fas fa-oil-rig"></i></div>
+                                <div class="object-tooltip">Вышка "Сахара-5"<br>Добыча: 15,000 бар/день<br>Глубина: 1,200 м<br>Статус: Работает</div>
+                            </div>
+                            <div class="monitoring-object rig" style="top: 35%; left: 20%;" data-continent="america" data-status="alert">
+                                <div class="object-icon"><i class="fas fa-oil-rig"></i></div>
+                                <div class="object-tooltip">Вышка "Гольфстрим-2"<br>Добыча: 8,000 бар/день<br>Глубина: 800 м<br>Статус: Технические работы</div>
+                            </div>
+                            <div class="monitoring-object tanker" style="top: 70%; left: 75%;" data-continent="australia" data-status="normal">
+                                <div class="object-icon"><i class="fas fa-ship"></i></div>
+                                <div class="object-tooltip">Танкер "Тихий океан"<br>Направление: Сидней<br>Груз: 95,000 тонн<br>Статус: В пути</div>
+                            </div>
+                            <div class="monitoring-object rig" style="top: 25%; left: 55%;" data-continent="asia" data-status="normal">
+                                <div class="object-icon"><i class="fas fa-oil-rig"></i></div>
+                                <div class="object-tooltip">Вышка "Каспий-3"<br>Добыча: 22,000 бар/день<br>Глубина: 300 м<br>Статус: Работает</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="stats-panel">
+                        <h3><i class="fas fa-chart-line"></i> Статистика</h3>
+                        <div class="stats-grid">
+                            <div class="stat-item">
+                                <div class="stat-label">Активных танкеров</div>
+                                <div class="stat-value">24</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-label">Работающих вышек</div>
+                                <div class="stat-value">156</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-label">Суточная добыча</div>
+                                <div class="stat-value">2.4M бар.</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-label">В пути (танкеры)</div>
+                                <div class="stat-value">18</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-label">Средняя цена</div>
+                                <div class="stat-value">$84.5</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-label">Тревоги</div>
+                                <div class="stat-value">2</div>
+                            </div>
+                        </div>
+                        
+                        <div class="system-log">
+                            <h3><i class="fas fa-clipboard-list"></i> Системный журнал</h3>
+                            <div class="log-entries">
+                                <div class="log-entry">[12:30] Танкер "Восток" вышел из порта</div>
+                                <div class="log-entry">[11:45] Вышка "Сахара-5": плановый ремонт завершен</div>
+                                <div class="log-entry">[10:20] Танкер "Азия-1": задержка 3 часа</div>
+                                <div class="log-entry">[09:15] Вышка "Гольфстрим-2": начаты техработы</div>
+                                <div class="log-entry">[08:05] Обновление данных по Европе</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Футер -->
+        <footer class="footer">
+            <div class="footer-info">
+                <p>Нефтяной Мониторинг &copy; 1995-2023 | Версия системы: 3.2.1</p>
+                <p>Последнее обновление данных: <span id="last-update">15.11.2023 12:45</span></p>
+            </div>
+            <div class="footer-links">
+                <a href="#"><i class="fas fa-question-circle"></i> Справка</a>
+                <a href="#"><i class="fas fa-cog"></i> Настройки</a>
+                <a href="#"><i class="fas fa-phone-alt"></i> Контакты</a>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Всплывающее окно для новостей -->
+    <div id="news-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modal-news-title"></h2>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p id="modal-news-content"></p>
+                <p class="modal-date" id="modal-news-date"></p>
+            </div>
+            <div class="modal-footer">
+                <button id="speech-modal-btn"><i class="fas fa-volume-up"></i> Озвучить</button>
+                <button id="close-modal-btn">Закрыть</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
